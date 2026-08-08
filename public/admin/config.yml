@@ -41,6 +41,7 @@ collections:
         fields:
           - { label: Hero Title, name: heroTitle, widget: string }
           - { label: Hero Body, name: body, widget: markdown }
+          - { label: Show Dev Section, name: showDevSection, widget: boolean, default: true }
           - { label: Dev Section Intro, name: devIntro, widget: text, required: false }
           - label: Social Links
             name: socialLinks

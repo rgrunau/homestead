@@ -27,6 +27,7 @@ const settings = defineCollection({
   loader: glob({ pattern: '**/*.md', base: './src/content/settings' }),
   schema: z.object({
     heroTitle: z.string(),
+    showDevSection: z.boolean().default(true),
     devIntro: z.string().optional(),
     socialLinks: z
       .array(

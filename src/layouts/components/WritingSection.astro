@@ -1,9 +1,9 @@
 ---
 import { getCollection } from 'astro:content';
 
-const posts = (await getCollection('posts')).sort(
-  (a, b) => b.data.date.valueOf() - a.data.date.valueOf()
-);
+const posts = (await getCollection('posts'))
+  .filter((post) => !post.data.draft)
+  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
 
 function teaser(post: (typeof posts)[number]) {
   if (post.data.summary) return post.data.summary;
@@ -17,31 +17,33 @@ function dateLabel(post: (typeof posts)[number]) {
     year: 'numeric',
     timeZone: 'UTC',
   });
-  return post.data.draft ? `Draft — ${month}` : `Published — ${month}`;
+  return `Published — ${month}`;
 }
 ---
 
-<section id="writing" class="writing">
-  <div class="writing-heading">
-    <h2>Writing</h2>
-    <span class="writing-kicker">occasional, unscheduled</span>
-  </div>
+{
+  posts.length > 0 && (
+    <section id="writing" class="writing">
+      <div class="writing-heading">
+        <h2>Writing</h2>
+        <span class="writing-kicker">occasional, unscheduled</span>
+      </div>
 
-  {
-    posts.map((post) => (
-      <article class="writing-post">
-        <div class="writing-date">{dateLabel(post)}</div>
-        <h3>
-          <a href={`/posts/${post.id}/`}>{post.data.title}</a>
-        </h3>
-        <p>{teaser(post)}</p>
-        <a href={`/posts/${post.id}/`} class="writing-link">
-          {post.data.draft ? 'Read the draft →' : 'Read the post →'}
-        </a>
-      </article>
-    ))
-  }
-</section>
+      {posts.map((post) => (
+        <article class="writing-post">
+          <div class="writing-date">{dateLabel(post)}</div>
+          <h3>
+            <a href={`/posts/${post.id}/`}>{post.data.title}</a>
+          </h3>
+          <p>{teaser(post)}</p>
+          <a href={`/posts/${post.id}/`} class="writing-link">
+            Read the post →
+          </a>
+        </article>
+      ))}
+    </section>
+  )
+}
 
 <style>
   .writing {

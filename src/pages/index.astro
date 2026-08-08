@@ -1,4 +1,5 @@
 ---
+import { getEntry } from 'astro:content';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Nav from '../layouts/components/Nav.astro';
 import Hero from '../layouts/components/Hero.astro';
@@ -6,14 +7,17 @@ import WritingSection from '../layouts/components/WritingSection.astro';
 import DevSection from '../layouts/components/DevSection.astro';
 import ElsewhereSection from '../layouts/components/ElsewhereSection.astro';
 import Footer from '../layouts/components/Footer.astro';
+
+const settings = await getEntry('settings', 'site');
+const showDevSection = settings?.data.showDevSection ?? true;
 ---
 
 <BaseLayout title="Robert Grunau">
   <div class="page-container">
-    <Nav />
+    <Nav showDev={showDevSection} />
     <Hero />
     <WritingSection />
-    <DevSection />
+    {showDevSection && <DevSection />}
     <ElsewhereSection />
     <Footer />
   </div>
