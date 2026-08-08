@@ -1,0 +1,23 @@
+backend:
+  name: github
+  repo: rgrunau/homestead
+  branch: main
+  auth_endpoint: api/auth
+  base_url: https://api.netlify.com
+
+media_folder: public/uploads
+public_folder: /uploads
+
+collections:
+  - name: posts
+    label: Blog Posts
+    folder: src/content/posts
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: Title, name: title, widget: string }
+      - { label: Publish Date, name: date, widget: datetime, format: "YYYY-MM-DD" }
+      - { label: Draft, name: draft, widget: boolean, default: true }
+      - { label: Subtitle, name: subtitle, widget: string, required: false }
+      - { label: Summary, name: summary, widget: text, required: false }
+      - { label: Body, name: body, widget: markdown }

@@ -1,0 +1,94 @@
+---
+import BaseLayout from './BaseLayout.astro';
+
+interface Props {
+  title: string;
+  date: Date;
+  draft: boolean;
+  subtitle: string;
+}
+
+const { title, date, draft, subtitle } = Astro.props;
+const dateLabel = `${draft ? 'Draft' : 'Published'} — ${date.toLocaleString('en-US', {
+  month: 'long',
+  year: 'numeric',
+  timeZone: 'UTC',
+})}`;
+---
+
+<BaseLayout title={`${title} — Robert Grunau`}>
+  <div class="post-container">
+    <nav class="post-nav">
+      <a href="/">← Back home</a>
+    </nav>
+
+    <article class="post-article">
+      <div class="post-date">{dateLabel}</div>
+      <h1>{title}</h1>
+      <p class="post-subtitle">{subtitle}</p>
+
+      <div class="post-body">
+        <slot />
+      </div>
+    </article>
+
+    <footer class="post-footer">
+      <a href="/">← Back home</a>
+    </footer>
+  </div>
+</BaseLayout>
+
+<style>
+  .post-container {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 0 var(--space-6) var(--space-8);
+    font-family: var(--font-body);
+    color: var(--color-text);
+  }
+  .post-nav {
+    padding: var(--space-6) 0;
+  }
+  .post-nav a {
+    text-decoration: none;
+    font-size: 14px;
+    color: var(--color-neutral-700);
+  }
+  .post-article {
+    padding-bottom: var(--space-8);
+  }
+  .post-date {
+    font-size: 13px;
+    color: var(--color-neutral-700);
+    margin-bottom: var(--space-3);
+  }
+  .post-article h1 {
+    font-family: var(--font-heading);
+    font-size: 36px;
+    line-height: 1.2;
+    font-weight: 600;
+    margin: 0 0 var(--space-4);
+  }
+  .post-subtitle {
+    font-size: 15px;
+    font-style: italic;
+    color: var(--color-neutral-700);
+    margin: 0 0 var(--space-6);
+  }
+  .post-body {
+    font-size: 18px;
+    line-height: 1.75;
+    max-width: 62ch;
+  }
+  .post-body :global(p) {
+    margin: 0 0 var(--space-4);
+  }
+  .post-body :global(p:last-child) {
+    margin: 0;
+  }
+  .post-footer {
+    padding: var(--space-6) 0;
+    font-size: 13px;
+    color: var(--color-neutral-700);
+  }
+</style>

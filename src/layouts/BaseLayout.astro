@@ -1,0 +1,38 @@
+---
+import '../styles/broadsheet-styles.css';
+
+interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>
+
+<style is:global>
+  body {
+    margin: 0;
+    background: var(--color-bg);
+  }
+  a {
+    color: var(--color-accent-700);
+    text-decoration: underline;
+    text-decoration-color: var(--color-accent-300);
+    text-underline-offset: 3px;
+  }
+  a:hover {
+    color: var(--color-accent);
+    text-decoration-color: var(--color-accent);
+  }
+</style>

@@ -1,0 +1,103 @@
+---
+const projects = [
+  {
+    id: 'proj-adjusting',
+    title: 'Middle Tennessee Adjusting & Appraisal',
+    description:
+      'A business site built for an insurance adjusting and appraisal practice in Middle Tennessee.',
+    href: '#',
+  },
+  {
+    id: 'proj-funds',
+    title: 'Funds',
+    description:
+      "A personal finance app for tracking spending and budgets. [Placeholder — brief description of what Funds actually does.]",
+    href: '#',
+  },
+];
+---
+
+<section id="dev" class="dev">
+  <h2>Dev Work</h2>
+
+  <div class="dev-list">
+    {
+      projects.map((project) => (
+        <article class="dev-project">
+          <div class="dev-screenshot halftone">
+            <span class="dev-screenshot-placeholder">Screenshot</span>
+          </div>
+          <div>
+            <h3>{project.title}</h3>
+            <p>{project.description}</p>
+            <a href={project.href} class="dev-link">
+              View project →
+            </a>
+          </div>
+        </article>
+      ))
+    }
+  </div>
+</section>
+
+<style>
+  .dev {
+    padding: var(--space-6) 0;
+  }
+  .dev h2 {
+    font-family: var(--font-heading);
+    font-size: 24px;
+    font-weight: 600;
+    margin: 0 0 var(--space-4);
+  }
+  .dev-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-6);
+  }
+  .dev-project {
+    display: grid;
+    grid-template-columns: 160px 1fr;
+    gap: var(--space-4);
+    align-items: start;
+  }
+  .dev-screenshot {
+    width: 160px;
+    height: 110px;
+    border-radius: var(--radius-lg);
+    border: 1px dashed var(--color-divider);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--color-surface);
+  }
+  .dev-screenshot-placeholder {
+    font-size: 12px;
+    color: var(--color-neutral-600);
+  }
+  .dev-project h3 {
+    font-family: var(--font-heading);
+    font-size: 19px;
+    font-weight: 600;
+    margin: 0 0 var(--space-2);
+  }
+  .dev-project p {
+    font-size: 15px;
+    line-height: 1.6;
+    color: var(--color-neutral-800);
+    margin: 0 0 var(--space-2);
+    max-width: 55ch;
+  }
+  .dev-link {
+    font-size: 14px;
+  }
+
+  @media (max-width: 520px) {
+    .dev-project {
+      grid-template-columns: 1fr;
+    }
+    .dev-screenshot {
+      width: 100%;
+    }
+  }
+</style>

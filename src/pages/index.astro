@@ -1,0 +1,30 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Nav from '../layouts/components/Nav.astro';
+import Hero from '../layouts/components/Hero.astro';
+import WritingSection from '../layouts/components/WritingSection.astro';
+import DevSection from '../layouts/components/DevSection.astro';
+import ElsewhereSection from '../layouts/components/ElsewhereSection.astro';
+import Footer from '../layouts/components/Footer.astro';
+---
+
+<BaseLayout title="Robert Grunau">
+  <div class="page-container">
+    <Nav />
+    <Hero />
+    <WritingSection />
+    <DevSection />
+    <ElsewhereSection />
+    <Footer />
+  </div>
+</BaseLayout>
+
+<style>
+  .page-container {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 0 var(--space-6) var(--space-8);
+    font-family: var(--font-body);
+    color: var(--color-text);
+  }
+</style>

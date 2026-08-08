@@ -1,0 +1,48 @@
+---
+const links = [
+  { label: 'The Askesis Project', href: '#', class: 'tag tag-accent-2' },
+  { label: 'Substack', href: '#', class: 'tag tag-outline' },
+  { label: 'Twitter / X', href: '#', class: 'tag tag-outline' },
+  { label: 'Other social', href: '#', class: 'tag tag-outline' },
+];
+---
+
+<section id="elsewhere" class="elsewhere">
+  <h2>Elsewhere</h2>
+  <div class="elsewhere-tags">
+    {
+      links.map((link) => (
+        <a href={link.href} class={link.class}>
+          {link.label}
+        </a>
+      ))
+    }
+  </div>
+  <p class="elsewhere-note">[Links stubbed — will be filled in later.]</p>
+</section>
+
+<style>
+  .elsewhere {
+    padding: var(--space-6) 0 var(--space-8);
+  }
+  .elsewhere h2 {
+    font-family: var(--font-heading);
+    font-size: 24px;
+    font-weight: 600;
+    margin: 0 0 var(--space-4);
+  }
+  .elsewhere-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-3);
+  }
+  .elsewhere-tags a {
+    text-decoration: none;
+  }
+  .elsewhere-note {
+    font-size: 13px;
+    color: var(--color-neutral-700);
+    margin-top: var(--space-4);
+    margin-bottom: 0;
+  }
+</style>
