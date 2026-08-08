@@ -1,17 +1,13 @@
 ---
+import { getEntry, render } from 'astro:content';
+
+const settings = await getEntry('settings', 'site');
+const { Content } = settings ? await render(settings) : { Content: null };
 ---
 
 <section id="top" class="hero">
-  <h1>A place to think out loud, mostly for myself.</h1>
-  <p>
-    This is my homestead — somewhere between a notebook and a workshop. I write here occasionally, mostly to work out
-    things I'm unsure about rather than to argue a point. I also build small software projects and dump them here
-    when they're done, or close enough.
-  </p>
-  <p>
-    If you're looking for something more considered and structured, that lives over at
-    <a href="#">The Askesis Project</a>. This is the rougher, more personal counterpart to that.
-  </p>
+  <h1>{settings?.data.heroTitle}</h1>
+  <div class="hero-body">{Content && <Content />}</div>
 </section>
 
 <style>
@@ -25,13 +21,13 @@
     font-weight: 600;
     margin: 0 0 var(--space-4);
   }
-  .hero p {
+  .hero-body :global(p) {
     font-size: 18px;
     line-height: 1.65;
     max-width: 62ch;
     margin: 0 0 var(--space-4);
   }
-  .hero p:last-child {
+  .hero-body :global(p:last-child) {
     margin: 0;
   }
 </style>

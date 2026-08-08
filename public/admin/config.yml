@@ -19,3 +19,37 @@ collections:
       - { label: Subtitle, name: subtitle, widget: string, required: false }
       - { label: Summary, name: summary, widget: text, required: false }
       - { label: Body, name: body, widget: markdown }
+
+  - name: projects
+    label: Dev Projects
+    folder: src/content/projects
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: Title, name: title, widget: string }
+      - { label: Description, name: description, widget: text }
+      - { label: Link, name: link, widget: string }
+      - { label: Screenshot, name: screenshot, widget: image, required: false }
+      - { label: Order, name: order, widget: number, default: 0 }
+
+  - name: settings
+    label: Site Settings
+    files:
+      - file: src/content/settings/site.md
+        label: Home Page
+        name: site
+        fields:
+          - { label: Hero Title, name: heroTitle, widget: string }
+          - { label: Hero Body, name: body, widget: markdown }
+          - { label: Dev Section Intro, name: devIntro, widget: text, required: false }
+          - label: Social Links
+            name: socialLinks
+            widget: list
+            fields:
+              - { label: Label, name: label, widget: string }
+              - { label: URL, name: url, widget: string }
+              - label: Style
+                name: style
+                widget: select
+                options: ["accent-2", "outline"]
+                default: "outline"

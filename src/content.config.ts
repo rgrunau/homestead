@@ -12,4 +12,32 @@ const posts = defineCollection({
   }),
 });
 
-export const collections = { posts };
+const projects = defineCollection({
+  loader: glob({ pattern: '**/*.md', base: './src/content/projects' }),
+  schema: z.object({
+    title: z.string(),
+    description: z.string(),
+    link: z.string(),
+    screenshot: z.string().optional(),
+    order: z.number().default(0),
+  }),
+});
+
+const settings = defineCollection({
+  loader: glob({ pattern: '**/*.md', base: './src/content/settings' }),
+  schema: z.object({
+    heroTitle: z.string(),
+    devIntro: z.string().optional(),
+    socialLinks: z
+      .array(
+        z.object({
+          label: z.string(),
+          url: z.string(),
+          style: z.enum(['accent-2', 'outline']).default('outline'),
+        })
+      )
+      .default([]),
+  }),
+});
+
+export const collections = { posts, projects, settings };
