@@ -2,8 +2,6 @@ backend:
   name: github
   repo: rgrunau/homestead
   branch: main
-  auth_endpoint: api/auth
-  base_url: https://api.netlify.com
 
 media_folder: public/uploads
 public_folder: /uploads
