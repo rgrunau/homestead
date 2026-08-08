@@ -1,5 +1,6 @@
 ---
 heroTitle: Digital Field Notes
+showDevSection: false
 devIntro: "From time to time I build tools for the web that I find useful. I
   also take on a few freelance projects from time to time. Have something you
   want to build? Reach out and we'll see if I'm a good fit:
