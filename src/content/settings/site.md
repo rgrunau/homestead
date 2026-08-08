@@ -1,24 +1,19 @@
 ---
-heroTitle: A place to think out loud, mostly for myself.
-devIntro: ""
+heroTitle: Digital Field Notes
+devIntro: "From time to time I build tools for the web that I find useful. I
+  also take on a few freelance projects from time to time. Have something you
+  want to build? Reach out and we'll see if I'm a good fit:
+  robertgrunau@hey.com"
 socialLinks:
   - label: The Askesis Project
-    url: "#"
+    url: askesisproject.substack.com
     style: accent-2
-  - label: Substack
-    url: "#"
-    style: outline
-  - label: Twitter / X
-    url: "#"
-    style: outline
-  - label: Other social
-    url: "#"
+  - label: Instagram
+    url: https://www.instagram.com/robert.grunau/
     style: outline
 ---
+Hey there, \
+I'm Robert Grunau and above all else I consider myself a writer and a thinker, one who is old enough to remember a time before the internet. For work, I do Data Engineering for a global logistics company. When it comes to fun stuff I train physically, meditate, occasionally fly fish, and hangout with my family In Seattle, Washington. This site is meant to collect all the random thoughts about random thing in my life.
 
-This is my homestead — somewhere between a notebook and a workshop. I write here occasionally, mostly to work out
-things I'm unsure about rather than to argue a point. I also build small software projects and dump them here
-when they're done, or close enough.
-
-If you're looking for something more considered and structured, that lives over at
-[The Askesis Project](#). This is the rougher, more personal counterpart to that.
+I also write about training/fitness, meditation, and personal change over at
+[The Askesis Project](askesisproject.substack.com). This site is a catch all that doesn't fit over there. 
