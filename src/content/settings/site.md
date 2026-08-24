@@ -17,7 +17,7 @@ socialLinks:
     style: outline
 ---
 Hey there, \
-I'm Robert Grunau and above all else I consider myself a writer and a thinker, one who is old enough to remember a time before the internet. For work, I do Data Engineering for a global logistics company. When it comes to fun stuff I train physically, meditate, occasionally fly fish, and hangout with my family In Seattle, Washington. This site is meant to collect all the random thoughts about random thing in my life.
+I'm Robert Grunau and above all else I consider myself a writer and a thinker, one who is old enough to remember a time before the internet. For work, I do Data Engineering for a global logistics company. When it comes to fun stuff I train physically, meditate, occasionally fly fish, and hangout with my family In Seattle, Washington.
 
 I also write about training/fitness, meditation, and personal change over at
-[The Askesis Project](askesisproject.substack.com). This site is a catch all that doesn't fit over there. 
+[The Askesis Project](askesisproject.substack.com). This site is a catch all that doesn't fit over there.
