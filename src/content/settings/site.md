@@ -9,7 +9,10 @@ socialLinks:
   - label: The Askesis Project
     url: askesisproject.substack.com
     style: accent-2
-  - label: Instagram
+  - style: outline
+    label: Askesis Project Instagram
+    url: https://www.instagram.com/askesisproject
+  - label: "Robert Grunau : Instagram"
     url: https://www.instagram.com/robert.grunau/
     style: outline
 ---
