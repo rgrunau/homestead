@@ -1,48 +1,50 @@
 ---
 interface Props {
-  showDev?: boolean;
+    showDev?: boolean;
 }
 
 const { showDev = true } = Astro.props;
 ---
 
 <nav class="nav">
-  <a href="#top" class="nav-brand">Robert Grunau</a>
-  <div class="nav-links">
-    <a href="#writing">Writing</a>
-    {showDev && <a href="#dev">Dev</a>}
-    <a href="#elsewhere">Elsewhere</a>
-    <a href="#" class="nav-external">The Askesis Project ↗</a>
-  </div>
+    <a href="#top" class="nav-brand">Robert Grunau</a>
+    <div class="nav-links">
+        <a href="#writing">Writing</a>
+        {showDev && <a href="#dev">Dev</a>}
+        <a href="#elsewhere">Elsewhere</a>
+        <a href="askesisproject.substack.com" class="nav-external"
+            >The Askesis Project ↗</a
+        >
+    </div>
 </nav>
 
 <style>
-  .nav {
-    display: flex;
-    align-items: baseline;
-    justify-content: space-between;
-    gap: var(--space-4);
-    padding: var(--space-6) 0;
-    flex-wrap: wrap;
-  }
-  .nav-brand {
-    font-family: var(--font-heading);
-    font-size: 22px;
-    font-weight: 600;
-    text-decoration: none;
-    color: var(--color-text);
-  }
-  .nav-links {
-    display: flex;
-    gap: var(--space-4);
-    flex-wrap: wrap;
-    font-size: 15px;
-  }
-  .nav-links a {
-    text-decoration: none;
-  }
-  .nav-external {
-    color: var(--color-accent-700);
-    font-style: italic;
-  }
+    .nav {
+        display: flex;
+        align-items: baseline;
+        justify-content: space-between;
+        gap: var(--space-4);
+        padding: var(--space-6) 0;
+        flex-wrap: wrap;
+    }
+    .nav-brand {
+        font-family: var(--font-heading);
+        font-size: 22px;
+        font-weight: 600;
+        text-decoration: none;
+        color: var(--color-text);
+    }
+    .nav-links {
+        display: flex;
+        gap: var(--space-4);
+        flex-wrap: wrap;
+        font-size: 15px;
+    }
+    .nav-links a {
+        text-decoration: none;
+    }
+    .nav-external {
+        color: var(--color-accent-700);
+        font-style: italic;
+    }
 </style>
