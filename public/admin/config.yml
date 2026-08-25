@@ -54,3 +54,23 @@ collections:
                 widget: select
                 options: ["accent-2", "outline"]
                 default: "outline"
+
+  - name: now
+    label: Now Page
+    files:
+      - file: src/content/now/now.md
+        label: Now
+        name: now
+        fields:
+          - { label: Updated, name: date, widget: datetime, format: "YYYY-MM-DD" }
+          - label: Sections
+            name: sections
+            widget: list
+            fields:
+              - { label: Label, name: label, widget: string }
+              - label: Entries
+                name: entries
+                widget: list
+                fields:
+                  - { label: Text, name: text, widget: string }
+                  - { label: URL, name: url, widget: string, required: false }

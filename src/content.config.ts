@@ -41,4 +41,24 @@ const settings = defineCollection({
   }),
 });
 
-export const collections = { posts, projects, settings };
+const now = defineCollection({
+  loader: glob({ pattern: '**/*.md', base: './src/content/now' }),
+  schema: z.object({
+    date: z.date(),
+    sections: z
+      .array(
+        z.object({
+          label: z.string(),
+          entries: z.array(
+            z.object({
+              text: z.string(),
+              url: z.string().optional(),
+            })
+          ),
+        })
+      )
+      .default([]),
+  }),
+});
+
+export const collections = { posts, projects, settings, now };
