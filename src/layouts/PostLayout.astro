@@ -1,5 +1,6 @@
 ---
 import BaseLayout from './BaseLayout.astro';
+import NewsletterSignup from './components/NewsletterSignup.astro';
 
 interface Props {
   title: string;
@@ -30,6 +31,8 @@ const dateLabel = `${draft ? 'Draft' : 'Published'} — ${date.toLocaleString('e
       <div class="post-body">
         <slot />
       </div>
+
+      <NewsletterSignup heading="Enjoyed this? Get future posts by email." />
     </article>
 
     <footer class="post-footer">

@@ -1,0 +1,68 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import NewsletterSignup from '../layouts/components/NewsletterSignup.astro';
+---
+
+<BaseLayout title="Newsletter — Robert Grunau">
+  <div class="newsletter-page-container">
+    <nav class="newsletter-page-nav">
+      <a href="/">← Back home</a>
+    </nav>
+
+    <article class="newsletter-page-article">
+      <h1>Newsletter</h1>
+      <p class="newsletter-page-intro">
+        Every time I publish a new post, it goes out by email — free, no
+        spam, unsubscribe whenever. It's the same writing as the <a
+          href="/rss.xml">RSS feed</a
+        >, just delivered to your inbox.
+      </p>
+
+      <NewsletterSignup heading="Subscribe" description="" />
+    </article>
+
+    <footer class="newsletter-page-footer">
+      <a href="/">← Back home</a>
+    </footer>
+  </div>
+</BaseLayout>
+
+<style>
+  .newsletter-page-container {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 0 var(--space-6) var(--space-8);
+    font-family: var(--font-body);
+    color: var(--color-text);
+  }
+  .newsletter-page-nav {
+    padding: var(--space-6) 0;
+  }
+  .newsletter-page-nav a {
+    text-decoration: none;
+    font-size: 14px;
+    color: var(--color-neutral-700);
+  }
+  .newsletter-page-article {
+    padding-bottom: var(--space-8);
+  }
+  .newsletter-page-article h1 {
+    font-family: var(--font-heading);
+    font-size: 36px;
+    line-height: 1.2;
+    font-weight: 600;
+    margin: 0 0 var(--space-4);
+  }
+  .newsletter-page-intro {
+    font-size: 17px;
+    line-height: 1.65;
+    color: var(--color-neutral-800);
+    max-width: 55ch;
+    margin: 0;
+  }
+  .newsletter-page-footer {
+    padding: var(--space-6) 0;
+    font-size: 13px;
+    color: var(--color-neutral-700);
+  }
+</style>

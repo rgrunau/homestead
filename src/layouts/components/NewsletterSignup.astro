@@ -1,0 +1,64 @@
+---
+interface Props {
+  heading?: string;
+  description?: string;
+}
+
+const {
+  heading = 'Get new posts by email',
+  description = 'Occasional, unscheduled — sent whenever I publish. Free, no spam.',
+} = Astro.props;
+---
+
+<div class="newsletter">
+  <h2>{heading}</h2>
+  {description && <p class="newsletter-desc">{description}</p>}
+  <form
+    action="https://buttondown.com/api/emails/embed-subscribe/robert-grunau"
+    method="post"
+    target="popupwindow"
+    onsubmit="window.open('https://buttondown.com/robert-grunau', 'popupwindow')"
+    class="newsletter-form"
+  >
+    <div class="field">
+      <label for="bd-email">Email address</label>
+      <input
+        class="input"
+        type="email"
+        name="email"
+        id="bd-email"
+        placeholder="you@example.com"
+        required
+      />
+    </div>
+    <input type="hidden" value="1" name="embed" />
+    <button type="submit" class="btn btn-primary">Subscribe</button>
+  </form>
+</div>
+
+<style>
+  .newsletter {
+    padding: var(--space-6) 0;
+  }
+  .newsletter h2 {
+    font-family: var(--font-heading);
+    font-size: 22px;
+    font-weight: 600;
+    margin: 0 0 var(--space-2);
+  }
+  .newsletter-desc {
+    font-size: 15px;
+    color: var(--color-neutral-700);
+    margin: 0 0 var(--space-3);
+    max-width: 50ch;
+  }
+  .newsletter-form {
+    display: flex;
+    align-items: flex-end;
+    gap: var(--space-2);
+    flex-wrap: wrap;
+  }
+  .newsletter-form .field {
+    flex: 1 1 240px;
+  }
+</style>
